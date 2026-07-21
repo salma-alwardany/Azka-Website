@@ -1,0 +1,31 @@
+name: Deploy to Hostinger
+
+# ينشر الموقع تلقائيًا على استضافة هوستنجر عند أي تعديل على الفرع الرئيسي
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # يسمح بتشغيل النشر يدويًا من تبويب Actions
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # مجلد النشر على هوستنجر (الملفات بتتحط جوه public_html)
+          server-dir: /public_html/
+          # الملفات اللي منرفعهاش على السيرفر
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
+            **/*.code-workspace
+            **/launch.json
