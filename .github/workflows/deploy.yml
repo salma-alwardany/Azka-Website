@@ -19,8 +19,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # مجلد النشر على هوستنجر (الملفات بتتحط جوه public_html)
-          server-dir: /public_html/
+          # مجلد النشر = جذر موقع azka.dev الحقيقي على هوستنجر
+          server-dir: /domains/azka.dev/public_html/
           # الملفات اللي منرفعهاش على السيرفر
           exclude: |
             **/.git*
