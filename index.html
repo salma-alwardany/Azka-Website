@@ -13,10 +13,14 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
+  html { overflow: hidden; }
   body {
     font-family: 'Manrope', sans-serif;
     color: #fff;
-    background: linear-gradient(180deg, #0D1B3D 0%, #1F3A8A 58%, #2f5fd0 100%);
+    background-color: #2f5fd0;
+    background-image: linear-gradient(180deg, #0D1B3D 0%, #1F3A8A 58%, #2f5fd0 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     height: 100dvh; min-height: 100dvh;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden; position: relative; text-align: center;
@@ -24,7 +28,7 @@
   }
   .az-blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .42; z-index: 0; }
   .az-blob.b1 { width: 40vh; height: 40vh; top: -12vh; right: -8vh; background: radial-gradient(circle, rgba(124,58,237,.55), transparent 70%); animation: az-float 9s ease-in-out infinite; }
-  .az-blob.b2 { width: 34vh; height: 34vh; bottom: -12vh; left: -9vh; background: radial-gradient(circle, rgba(0,194,171,.4), transparent 70%); animation: az-float2 11s ease-in-out infinite; }
+  .az-blob.b2 { width: 32vh; height: 32vh; bottom: -6vh; left: -8vh; background: radial-gradient(circle, rgba(0,194,171,.4), transparent 70%); animation: az-float2 11s ease-in-out infinite; }
   .az-grid { position: absolute; inset: 0; z-index: 0;
     background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
     background-size: 46px 46px;
