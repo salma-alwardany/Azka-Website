@@ -29,3 +29,4 @@ jobs:
             **/README.md
             **/*.code-workspace
             **/launch.json
+            **/site-en.html
